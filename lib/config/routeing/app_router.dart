@@ -2,7 +2,7 @@ import 'package:advanced_app/config/routeing/routes.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/auth/login/presentation/screens/login_screen.dart';
-import '../../features/on_boarding/presentation/screens/on_boarding_screen.dart';
+import '../../features/on_boarding/presentation/on_boarding_screen.dart';
 
 class AppRouter {
 

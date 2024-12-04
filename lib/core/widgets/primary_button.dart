@@ -1,7 +1,7 @@
-import 'package:advanced_app/core/utils/styles/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../utils/app_colors/app_colors.dart';
+import '../../config/theming/styles/text_styles.dart';
 
 class PrimaryButton extends StatefulWidget {
   final VoidCallback onTap;
@@ -9,7 +9,8 @@ class PrimaryButton extends StatefulWidget {
   final double? width;
   final double? height;
   final double? borderRadius;
-  final Color?  bgColor;
+  final Color? bgColor;
+  final TextStyle? textStyle;
 
   const PrimaryButton({
     super.key,
@@ -19,6 +20,7 @@ class PrimaryButton extends StatefulWidget {
     this.height,
     this.borderRadius,
     required this.bgColor,
+    this.textStyle,
   });
 
   @override
@@ -71,18 +73,15 @@ class _PrimaryButtonState extends State<PrimaryButton>
               borderRadius: BorderRadius.circular(widget.borderRadius!),
             ),
             child: Container(
-              height: widget.height ?? 55,
+              height: widget.height ?? 52.h,
               alignment: Alignment.center,
-              width: widget.width ?? double.maxFinite,
+              width: widget.width ?? 327.w,
               decoration: BoxDecoration(
                 color: widget.bgColor,
                 borderRadius: BorderRadius.circular(widget.borderRadius!),
               ),
-              child: Text(
-
-                widget.text,
-                style: TextStyles.fontPrimaryButton
-              ),
+              child: Text(widget.text,
+                  style: widget.textStyle ?? TextStyles.fontPrimaryButton),
             ),
           ),
         ));

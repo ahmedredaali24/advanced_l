@@ -4,11 +4,11 @@ import 'package:advanced_app/core/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../config/routeing/routes.dart';
-import '../../../../core/utils/strings/app_strings.dart';
-import '../../../../core/utils/styles/text_styles.dart';
-import '../widgets/doc_logo_and_name.dart';
-import '../widgets/doctor_image_and_text.dart';
+import '../../../config/routeing/routes.dart';
+import '../../../config/theming/styles/text_styles.dart';
+import '../../../core/utils/strings/app_strings.dart';
+import 'widgets/doc_logo_and_name.dart';
+import 'widgets/doctor_image_and_text.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
