@@ -4,13 +4,16 @@ class PrimaryTextButton extends StatelessWidget {
   const PrimaryTextButton({super.key,
     required this.onPressed,
     required this.title,
-    required this.fontSize,
-    required this.textColor});
+     this.fontSize,
+     this.textColor, this.textStyle,
+
+  });
 
   final Function() onPressed;
   final String title;
-  final double fontSize;
-  final Color textColor;
+  final double? fontSize;
+  final Color? textColor;
+  final TextStyle?textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class PrimaryTextButton extends StatelessWidget {
       onTap: onPressed,
       child: Text(
         title,
-        style: TextStyle(
+        style:textStyle?? TextStyle(
           fontSize: fontSize,
           fontFamily: 'Inter',
           fontWeight: FontWeight.bold,
