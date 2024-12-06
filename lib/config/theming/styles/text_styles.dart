@@ -78,4 +78,19 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     fontFamily: "Inter",
   );
+
+  static TextStyle font14BlueSemiBold = TextStyle(
+    color: AppColors.primaryBlue,
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    fontFamily: "Inter",
+  );
+  static TextStyle font15DarkBlueMedium = TextStyle(
+    color: AppColors.darkBlue,
+    fontSize: 15.sp,
+    fontWeight: FontWeightHelper.medium,
+    fontFamily: "Inter",
+  );
+
+
 }

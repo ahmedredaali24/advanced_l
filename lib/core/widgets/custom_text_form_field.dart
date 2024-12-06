@@ -13,6 +13,8 @@ class CustomTextFormField extends StatelessWidget {
   final InputBorder? enabledBorder;
   final InputBorder? focusedBorder;
   final Color? backGroundColor;
+  final TextEditingController? controller;
+  final String? Function(String?) validator;
 
   const CustomTextFormField({
     super.key,
@@ -25,11 +27,17 @@ class CustomTextFormField extends StatelessWidget {
     this.focusedBorder,
     this.contentPadding,
     this.backGroundColor,
+    this.controller,
+    required this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      validator: (value) {
+        return validator(value);
+      },
       decoration: InputDecoration(
         fillColor: backGroundColor ?? AppColors.moreLightGray,
         filled: true,
@@ -50,6 +58,18 @@ class CustomTextFormField extends StatelessWidget {
                   width: 1.3,
                 ),
                 borderRadius: BorderRadius.circular(16.r)),
+        errorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: Colors.red,
+              width: 1.3,
+            ),
+            borderRadius: BorderRadius.circular(16.r)),
+        focusedErrorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: Colors.red,
+              width: 1.3,
+            ),
+            borderRadius: BorderRadius.circular(16.r)),
         hintStyle: hintStyle ?? TextStyles.font14GLightGrayRegular,
         hintText: hintText,
         suffixIcon: suffixIcon,
