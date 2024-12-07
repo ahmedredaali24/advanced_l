@@ -7,4 +7,6 @@ class AppStrings {
 
   static const String registerScreenText =
       "Sign up now and start exploring all that our app has to offer. We're excited to welcome you to our community!";
+  static const String onDocTextHomeScreen = "Book and\nschedule with\nnearest doctor";
+
 }
