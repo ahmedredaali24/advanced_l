@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../config/theming/styles/text_styles.dart';
+import '../../config/theming/styles/text_styles.dart';
 
 class TermAndConditions extends StatelessWidget {
   const TermAndConditions({super.key});
