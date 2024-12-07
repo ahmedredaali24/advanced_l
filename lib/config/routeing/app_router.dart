@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/auth/login/presentation/screens/login_screen.dart';
-import '../../features/home/home_screen.dart';
+import '../../features/home/home/presentation/screens/home_screen.dart';
 import '../../features/on_boarding/presentation/on_boarding_screen.dart';
 
 class AppRouter {
@@ -16,23 +16,28 @@ class AppRouter {
     switch (setting.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
-    ///loginScreen
+
+      ///loginScreen
       case Routes.loginScreen:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
               create: (context) => getIt<LoginViewModel>(),
               child: const LoginScreen()),
         );
-        ///registerScreen
+
+      ///registerScreen
       case Routes.registerScreen:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
               create: (context) => getIt<RegisterViewModel>(),
               child: const RegisterScreen()),
         );
-        ///homeScreen
+
+      ///homeScreen
       case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(
+          builder: (_) => const HomeScreen(),
+        );
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

@@ -32,8 +32,7 @@ class TextStyles {
       color: AppColors.white,
       fontSize: 16.sp,
       fontWeight: FontWeightHelper.semiBold,
-     fontFamily: "Inter"
-  );
+      fontFamily: "Inter");
 
   static TextStyle font24BlueBold = TextStyle(
       color: AppColors.primaryBlue,
@@ -91,6 +90,46 @@ class TextStyles {
     fontWeight: FontWeightHelper.medium,
     fontFamily: "Inter",
   );
-
-
+  static TextStyle font18DarkBlueBold = TextStyle(
+    color: AppColors.darkBlue,
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.bold,
+    fontFamily: "Inter",
+  );
+  static TextStyle font18DarkBlueSemiBold = TextStyle(
+    color: AppColors.darkBlue,
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    fontFamily: "Inter",
+  );
+  static TextStyle font12GrayRegular = TextStyle(
+    color: AppColors.gray,
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: "Inter",
+  );
+  static TextStyle font12GrayMedium = TextStyle(
+    color: AppColors.gray,
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.medium,
+    fontFamily: "Inter",
+  );
+  static TextStyle font12BlueRegular = TextStyle(
+    color: AppColors.primaryBlue,
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: "Inter",
+  );
+  static TextStyle font12DarkBlueRegular = TextStyle(
+    color: AppColors.darkBlue,
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: "Inter",
+  );
+  static TextStyle font18WhiteMedium = TextStyle(
+    color: AppColors.white,
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.medium,
+    fontFamily: "Inter",
+  );
 }
