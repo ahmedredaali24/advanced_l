@@ -1,20 +1,20 @@
-import 'package:advanced_app/config/theming/styles/text_styles.dart';
-import 'package:advanced_app/core/helpper/spacing_helper.dart';
-import 'package:advanced_app/core/utils/app_colors/app_colors.dart';
-import 'package:advanced_app/core/utils/strings/app_strings.dart';
-import 'package:advanced_app/core/widgets/primary_button.dart';
-import 'package:advanced_app/features/auth/login/logic/cubit.dart';
+import 'package:advanced_app/features/auth/register/logic/cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../widgets/do_not_have_account_text.dart';
-import '../widgets/email_and_password.dart';
-import '../widgets/login_bloc_listener.dart';
+import '../../../../../config/theming/styles/text_styles.dart';
+import '../../../../../core/helpper/spacing_helper.dart';
+import '../../../../../core/utils/app_colors/app_colors.dart';
+import '../../../../../core/utils/strings/app_strings.dart';
+import '../../../../../core/widgets/primary_button.dart';
 import '../../../../../core/widgets/term_and_conditions.dart';
+import '../widgets/already_have_account_text.dart';
+import '../widgets/register_bloc_listener.dart';
+import '../widgets/register_form.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,23 +32,15 @@ class LoginScreen extends StatelessWidget {
               ),
               verticalSpace(8),
               Text(
-                AppStrings.loginScreenText,
+                AppStrings.registerScreenText,
                 style: TextStyles.font14GrayRegular,
                 maxLines: 3,
               ),
               verticalSpace(36),
               Column(
                 children: [
-                  const EmailAndPassword(),
+                  const RegisterForm(),
                   verticalSpace(24),
-                  Align(
-                    alignment: AlignmentDirectional.centerEnd,
-                    child: Text(
-                      "Forget Password",
-                      style: TextStyles.font13darkBlueRegular,
-                    ),
-                  ),
-                  verticalSpace(40),
                   PrimaryButton(
                     height: 52.h,
                     width: 327.w,
@@ -56,15 +48,16 @@ class LoginScreen extends StatelessWidget {
                     onTap: () {
                       validateThenDoLogin(context);
                     },
-                    text: "Login",
+                    text: "Create Account",
                     bgColor: AppColors.primaryBlue,
                     borderRadius: 16.r,
                   ),
                   verticalSpace(16),
                   const TermAndConditions(),
-                  verticalSpace(60),
-                  const DoNotHaveAccountText(),
-                  const LoginBlocListener(),
+                  verticalSpace(10),
+                  const AlreadyHaveAccountText(),
+                  verticalSpace(30),
+                  const RegisterBlocListener(),
                 ],
               ),
             ],
@@ -75,10 +68,8 @@ class LoginScreen extends StatelessWidget {
   }
 
   void validateThenDoLogin(BuildContext context) {
-
-    if(context.read<LoginViewModel>().formKey.currentState!.validate()){
-      context.read<LoginViewModel>().emitLoginState();
+    if (context.read<RegisterViewModel>().formKey.currentState!.validate()) {
+      context.read<RegisterViewModel>().emitRegisterState();
     }
-
   }
 }

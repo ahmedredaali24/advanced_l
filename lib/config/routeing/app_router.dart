@@ -1,6 +1,8 @@
 import 'package:advanced_app/config/routeing/routes.dart';
 import 'package:advanced_app/core/di/dependency_injection.dart';
 import 'package:advanced_app/features/auth/login/logic/cubit.dart';
+import 'package:advanced_app/features/auth/register/logic/cubit.dart';
+import 'package:advanced_app/features/auth/register/presentation/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,13 +16,21 @@ class AppRouter {
     switch (setting.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
-
+    ///loginScreen
       case Routes.loginScreen:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
               create: (context) => getIt<LoginViewModel>(),
               child: const LoginScreen()),
         );
+        ///registerScreen
+      case Routes.registerScreen:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+              create: (context) => getIt<RegisterViewModel>(),
+              child: const RegisterScreen()),
+        );
+        ///homeScreen
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       default:

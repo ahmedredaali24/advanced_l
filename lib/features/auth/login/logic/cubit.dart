@@ -14,10 +14,12 @@ class LoginViewModel extends Cubit<LoginStates> {
   TextEditingController email=TextEditingController();
   TextEditingController password=TextEditingController();
 
-  void emitLoginState(LoginRequestBody loginResponseBody) async {
+  void emitLoginState() async {
     emit(const LoginStates.loading());
 
-    final response = await _loginRepository.login(loginResponseBody);
+    final response = await _loginRepository.login(
+      LoginRequestBody(email: email.text, password: password.text)
+    );
     response.when(
       success: (loginResponse) {
         emit(LoginStates.success(loginResponse));

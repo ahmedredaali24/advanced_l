@@ -3,7 +3,7 @@ import 'package:advanced_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../config/theming/styles/text_styles.dart';
+import '../../config/theming/styles/text_styles.dart';
 
 class PasswordValidations extends StatelessWidget {
   final bool hasLowerCase;
@@ -33,7 +33,7 @@ class PasswordValidations extends StatelessWidget {
         verticalSpace(2),
         buildValidation("At least 1  number letter", hasNumber),
         verticalSpace(2),
-        buildValidation("At least 1 min length letter", hasMinLength),
+        buildValidation("At least 8 character long", hasMinLength),
       ],
     );
   }

@@ -1,6 +1,6 @@
 import 'package:advanced_app/core/helpper/app_regex.dart';
 import 'package:advanced_app/features/auth/login/logic/cubit.dart';
-import 'package:advanced_app/features/auth/login/presentation/widgets/password_validations.dart';
+import 'package:advanced_app/core/widgets/password_validations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
