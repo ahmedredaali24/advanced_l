@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../config/theming/styles/text_styles.dart';
-import '../../../../../core/helpper/spacing_helper.dart';
+import '../../../../../core/helper/spacing_helper.dart';
 import '../../../../../core/utils/app_colors/app_colors.dart';
 import '../../data/models/specialization_response.dart';
 class DoctorsSpecialityListItem extends StatelessWidget {

@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../config/theming/styles/text_styles.dart';
-import '../../../../../core/helpper/spacing_helper.dart';
+import '../../../../../core/helper/spacing_helper.dart';
 import '../../../../../core/utils/app_colors/app_colors.dart';
 import '../../../../../core/utils/strings/app_strings.dart';
 import '../../../../../core/widgets/primary_button.dart';

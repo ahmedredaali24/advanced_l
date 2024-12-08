@@ -2,8 +2,8 @@ import 'package:advanced_app/features/auth/register/logic/cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/helpper/app_regex.dart';
-import '../../../../../core/helpper/spacing_helper.dart';
+import '../../../../../core/helper/app_regex.dart';
+import '../../../../../core/helper/spacing_helper.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../../core/widgets/password_validations.dart';
 
