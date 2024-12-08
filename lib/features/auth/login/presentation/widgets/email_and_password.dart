@@ -1,10 +1,10 @@
-import 'package:advanced_app/core/helpper/app_regex.dart';
 import 'package:advanced_app/features/auth/login/logic/cubit.dart';
 import 'package:advanced_app/core/widgets/password_validations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/helpper/spacing_helper.dart';
+import '../../../../../core/helper/app_regex.dart';
+import '../../../../../core/helper/spacing_helper.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 
 class EmailAndPassword extends StatefulWidget {

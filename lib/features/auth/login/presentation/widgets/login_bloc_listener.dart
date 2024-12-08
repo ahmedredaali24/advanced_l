@@ -1,4 +1,4 @@
-import 'package:advanced_app/core/helpper/extensions.dart';
+import 'package:advanced_app/core/helper/extensions.dart';
 import 'package:advanced_app/core/widgets/dialog_widgets.dart';
 import 'package:advanced_app/features/auth/login/logic/cubit.dart';
 import 'package:advanced_app/features/auth/login/logic/states.dart';
@@ -24,15 +24,18 @@ class LoginBlocListener extends StatelessWidget {
                   context: context, massage: "Loading....");
             },
             success: (loginResponse) {
+              context
+                  .read<LoginViewModel>()
+                  .saveUserToken(loginResponse.userData?.token ?? "");
               context.pop;
-              context.pushNamed(Routes.homeScreen);
+              context.pushNamedAndRemoveUntil(Routes.homeScreen,
+                  predicate: (route) => false);
             },
             error: (error) {
               context.pop();
               DialogWidgets.showMessage(
                 context: context,
                 massage: error,
-
               );
             },
           );

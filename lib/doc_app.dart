@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'config/routeing/routes.dart';
+import 'core/utils/constants/shared_pref_keys.dart';
+import 'main_development.dart';
 
 class DocApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -22,7 +24,8 @@ class DocApp extends StatelessWidget {
         theme: ThemeData(
             primaryColor: AppColors.primaryBlue,
             scaffoldBackgroundColor: Colors.white),
-        initialRoute: Routes.homeScreen,
+        initialRoute:isLoggedInUser?
+        Routes.homeScreen:Routes.loginScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );

@@ -1,4 +1,4 @@
-import 'package:advanced_app/core/helpper/extensions.dart';
+import 'package:advanced_app/core/helper/extensions.dart';
 import 'package:advanced_app/features/auth/register/logic/cubit.dart';
 import 'package:advanced_app/features/auth/register/logic/states_register.dart';
 import 'package:flutter/material.dart';
