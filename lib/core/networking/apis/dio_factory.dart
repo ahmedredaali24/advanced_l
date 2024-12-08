@@ -28,7 +28,7 @@ class DioFactory {
     dio?.options.headers = {
       "Accept": "application/json",
       "Authorization":
-          "Bearer ${await SharedPrefHelper.getString(SharedPrefKeys.userToken)}"
+          "Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}"
     };
   }
 
@@ -46,7 +46,7 @@ class DioFactory {
       onRequest: (options, handler) async {
         // استرداد التوكين الديناميكي من SharedPrefHelper
         final token =
-            await SharedPrefHelper.getString(SharedPrefKeys.userToken);
+            await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
 
         // إضافة هيدر Authorization
         options.headers.addAll({
