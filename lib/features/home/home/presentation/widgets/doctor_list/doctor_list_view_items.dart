@@ -2,9 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../config/theming/styles/text_styles.dart';
-import '../../../../../core/helper/spacing_helper.dart';
-import '../../data/models/specialization_response.dart';
+import '../../../../../../config/theming/styles/text_styles.dart';
+import '../../../../../../core/helper/spacing_helper.dart';
+import '../../../data/models/specialization_response.dart';
 
 class DoctorListViewItems extends StatelessWidget {
   final Doctors? doctorsModel;

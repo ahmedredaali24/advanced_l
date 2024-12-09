@@ -1,14 +1,16 @@
+import 'package:advanced_app/features/home/home/presentation/widgets/specilization/spe_shimmer_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/helper/spacing_helper.dart';
-import '../../logic/cubit.dart';
-import '../../logic/home_screen_states.dart';
-import 'doctor_speciality_list_view.dart';
-import 'doctors_list_view.dart';
 
-class BlocBuilderHomeScreen extends StatelessWidget {
-  const BlocBuilderHomeScreen({super.key});
+import '../../../../../../core/helper/spacing_helper.dart';
+import '../../../logic/cubit.dart';
+import '../../../logic/home_screen_states.dart';
+import '../doctor_list/doctor_shimmer_loading.dart';
+import 'doctor_speciality_list_view.dart';
+
+class BlocBuilderSpecialization extends StatelessWidget {
+  const BlocBuilderSpecialization({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class BlocBuilderHomeScreen extends StatelessWidget {
         }, loading: () {
           return setupLoading();
         }, success: (responseHome) {
-          var date = responseHome.data ?? [];
+          var date = responseHome ?? [];
 
           return setupSuccess(date);
         }, error: (error) {
@@ -34,27 +36,19 @@ class BlocBuilderHomeScreen extends StatelessWidget {
   }
 
   Widget setupLoading() {
-    return const SizedBox(
-      height: 100,
-      child: Center(
-        child: CircularProgressIndicator(),
-      ),
-    );
+    return Expanded(
+        child: Column(
+      children: [
+        const SpeShimmerLoading(),
+        verticalSpace(8),
+        const DoctorShimmerLoading()
+      ],
+    ));
   }
 
   Widget setupSuccess(date) {
-    return Expanded(
-      child: Column(
-        children: [
-          DoctorSpecialityListView(
-            dataList: date,
-          ),
-          verticalSpace(8),
-          DoctorsListView(
-            doctorsList: date[0].doctors ?? [],
-          )
-        ],
-      ),
+    return DoctorSpecialityListView(
+      dataList: date,
     );
   }
 
