@@ -89,8 +89,10 @@ class _RegisterFormState extends State<RegisterForm> {
           verticalSpace(18),
           CustomTextFormField(
             validator: (value) {
-              if (value == null ||value.trim().isEmpty ||
-              AppRegex.isPasswordValid(value)) {
+              if (value == null || value.trim().isEmpty
+                  // ||
+                  // AppRegex.isPasswordValid(value)
+                  ) {
                 return "please enter a valid password";
               }
               return null;
@@ -112,9 +114,10 @@ class _RegisterFormState extends State<RegisterForm> {
           verticalSpace(18),
           CustomTextFormField(
             validator: (value) {
-              if (value == null ||
-                  value.trim().isEmpty ||
-                  AppRegex.isPasswordValid(value)) {
+              if (value == null || value.trim().isEmpty
+                  // ||
+                  // AppRegex.isPasswordValid(value)
+                  ) {
                 return "please enter a valid password";
               }
               return null;

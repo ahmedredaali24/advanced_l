@@ -1,3 +1,4 @@
+import 'package:advanced_app/core/errors/failuers/error_handler.dart';
 import 'package:advanced_app/features/auth/login/data/models/login_request_body.dart';
 import 'package:advanced_app/features/auth/login/data/models/login_response.dart';
 import 'package:advanced_app/features/auth/register/data/models/sign_up_request_body.dart';
@@ -16,8 +17,8 @@ class RegisterRepository {
     try {
       var response = await _apiService.signup(signRequestBody);
       return ApiResult.success(response);
-    } catch (e) {
-      return const ApiResult.failure("error");
+    } catch (error) {
+      return  ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
 }

@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import '../utils/app_colors/app_colors.dart';
 
 class DialogWidgets {
-
-
   static void showLoading(
       {required BuildContext context,
       required String massage,

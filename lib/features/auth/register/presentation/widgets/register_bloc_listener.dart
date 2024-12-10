@@ -20,17 +20,22 @@ class RegisterBlocListener extends StatelessWidget {
           state.whenOrNull(
             loading: () {
               DialogWidgets.showLoading(
-                  context: context, massage: "Loading....");
+                  context: context, massage: "Loading....",isDismissible: false);
             },
-            success: (loginResponse) {
-              context.pop;
+            success: (registerResponse) {
+              context.pop();
               context.pushNamed(Routes.loginScreen);
             },
             error: (error) {
               context.pop();
               DialogWidgets.showMessage(
                 context: context,
-                massage: error,
+                massage: error.getAllErrorMessages(),
+                title: "error",
+                posActionName: "ok",
+                posAction: (){
+
+                }
 
               );
             },

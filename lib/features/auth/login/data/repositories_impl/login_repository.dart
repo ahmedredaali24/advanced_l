@@ -1,3 +1,5 @@
+import 'package:advanced_app/core/errors/failuers/error_handler.dart';
+import 'package:advanced_app/core/networking/apis/api_error_model.dart';
 import 'package:advanced_app/features/auth/login/data/models/login_request_body.dart';
 import 'package:advanced_app/features/auth/login/data/models/login_response.dart';
 
@@ -15,8 +17,8 @@ class LoginRepository {
     try {
       var response = await _apiService.login(loginRequestBody);
       return ApiResult.success(response);
-    } catch (e) {
-      return const ApiResult.failure("error");
+    } catch (error) {
+      return  ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
 }

@@ -20,5 +20,5 @@ abstract class ApiService {
   Future<LoginResponse> login(@Body() LoginRequestBody loginRequestBody);
 
   @POST(ApiConstants.signEndpoint)
-  Future<RegisterResponse> signup(@Body() SignUpRequestBody loginRequestBody);
+  Future<RegisterResponse> signup(@Body() SignUpRequestBody signUpRequestBody);
 }
