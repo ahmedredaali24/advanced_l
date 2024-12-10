@@ -75,10 +75,10 @@ class LoginScreen extends StatelessWidget {
   }
 
   void validateThenDoLogin(BuildContext context) {
-
-    if(context.read<LoginViewModel>().formKey.currentState!.validate()){
-      context.read<LoginViewModel>().emitLoginState();
-    }
+    context.read<LoginViewModel>().emitLoginState();
+    // if(context.read<LoginViewModel>().formKey.currentState!.validate()){
+    //
+    // }
 
   }
 }

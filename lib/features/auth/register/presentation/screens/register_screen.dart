@@ -68,8 +68,10 @@ class RegisterScreen extends StatelessWidget {
   }
 
   void validateThenDoLogin(BuildContext context) {
-    if (context.read<RegisterViewModel>().formKey.currentState!.validate()) {
-      context.read<RegisterViewModel>().emitRegisterState();
-    }
+    context.read<RegisterViewModel>().emitRegisterState();
+    // if (
+    // context.read<RegisterViewModel>().formKey.currentState!.validate()) {
+    //
+    // }
   }
 }

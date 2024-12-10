@@ -33,8 +33,8 @@ class RegisterViewModel extends Cubit<RegisterStates> {
       success: (registerResponse) {
         emit(RegisterStates.success(registerResponse));
       },
-      failure: (error) {
-        emit(RegisterStates.error(error: error = "error"));
+      failure: (apiModelError) {
+        emit(RegisterStates.error(apiModelError));
       },
     );
   }

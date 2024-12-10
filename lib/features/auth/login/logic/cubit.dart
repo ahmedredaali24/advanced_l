@@ -1,11 +1,11 @@
 import 'package:advanced_app/core/helper/shared_pref_helper.dart';
-import 'package:advanced_app/core/networking/apis/dio_factory.dart';
 import 'package:advanced_app/core/utils/constants/shared_pref_keys.dart';
 import 'package:advanced_app/features/auth/login/data/models/login_request_body.dart';
 import 'package:advanced_app/features/auth/login/logic/states.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../../../../core/networking/apis/dio_factory.dart';
 import '../data/repositories_impl/login_repository.dart';
 
 class LoginViewModel extends Cubit<LoginStates> {
@@ -30,16 +30,17 @@ class LoginViewModel extends Cubit<LoginStates> {
 
     response.when(
       success: (loginResponse) async {
-        emit(LoginStates.success(data:loginResponse ));
+        await saveUserToken(loginResponse.userData?.token ?? '');
+        emit(LoginStates.success(loginResponse ));
       },
-      failure: (error) {
-        emit(LoginStates.error(error: error = "error"));
+      failure: (apiErrorModel) {
+        emit(LoginStates.error(apiErrorModel));
       },
     );
   }
 
   saveUserToken(String token) async {
     await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
-    // DioFactory.setTokenAfterLogin(token);
+    DioFactory.setTokenIntoHeaderAfterLogin(token);
   }
 }

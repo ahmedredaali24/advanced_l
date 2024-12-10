@@ -1,3 +1,5 @@
+import 'package:advanced_app/core/errors/failuers/error_handler.dart';
+import 'package:advanced_app/core/networking/apis/api_error_model.dart';
 import 'package:advanced_app/features/home/home/logic/home_screen_states.dart';
 import 'package:bloc/bloc.dart';
 
@@ -20,8 +22,8 @@ class HomeScreenViewModel extends Cubit<HomeScreenStates> {
         getDoctorsList(specializationId: dataList?.first?.id);
         emit(HomeScreenStates.success(specializationResponse: dataList));
       },
-      failure: (error) {
-        emit(HomeSreenErrorState(error: error));
+      failure: (apiErrorModel) {
+        emit(HomeSreenErrorState(apiErrorModel));
       },
     );
   }
@@ -34,14 +36,14 @@ class HomeScreenViewModel extends Cubit<HomeScreenStates> {
     if (specializationList.isNotEmpty) {
       emit(HomeScreenStates.doctorsSuccess(specializationList));
     } else {
-      emit(const HomeScreenStates.doctorsError(error: "error doctor list"));
+      emit(const HomeScreenStates.doctorsError());
     }
   }
 
   ///returns the list of doctors based on the specializationId
- List<Doctors> filterSpecializationById(int? specializationId) {
-    final specialization= dataList?.firstWhere(
+  List<Doctors> filterSpecializationById(int? specializationId) {
+    final specialization = dataList?.firstWhere(
         (specialization) => specialization?.id == specializationId);
-    return specialization?.doctors??[];
+    return specialization?.doctors ?? [];
   }
 }
